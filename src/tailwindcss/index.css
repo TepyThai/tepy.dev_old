@@ -1,0 +1,21 @@
+@import "tailwindcss/base";
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  min-height: calc(100vh - 16rem - 5rem);
+  margin: 0;
+}
+
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
