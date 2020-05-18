@@ -5,7 +5,7 @@ export default function DateFormater({ dateStr, className, ...rest }) {
   return (
     <time
       dateTime={dateStr}
-      className={`mt-1 text-sm block text-gray-600 ${className}`}
+      className={`mt-1 text-sm block text-gray-800 ${className}`}
       {...rest}
     >
       {format(date, 'LLLL	d, yyyy')}

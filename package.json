@@ -9,6 +9,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@reach/skip-nav": "^0.10.2",
     "date-fns": "^2.13.0",
     "framer-motion": "^1.11.0",
     "gray-matter": "^4.0.2",

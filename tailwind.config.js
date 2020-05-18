@@ -16,7 +16,7 @@ module.exports = {
         post: '675px',
       },
       colors: {
-        primary: '#08BDBA',
+        primary: '#007B79',
       },
     },
   },

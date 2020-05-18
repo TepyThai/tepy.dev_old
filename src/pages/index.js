@@ -2,15 +2,20 @@ import Layout from '../components/Layout';
 import Profile from '../components/Profile';
 import PostItem from '../components/PostItem';
 import { getAllPosts } from '../../lib/api';
+import Head from 'next/head';
+import TitleLabel from '../components/TitleLabel';
 
 export default function HomePage({ allPosts }) {
   return (
     <Layout>
+      <Head>
+        <title>Tepy Thai</title>
+      </Head>
       <div className="mx-auto">
         <Profile />
         <div className="flex flex-col md:flex-row justify-between items-start">
           <div>
-            <div className="text-gray-600 font-bold">Recent Writing:</div>
+            <TitleLabel>Recent Writing:</TitleLabel>
             <div className="mt-8">
               {allPosts.length > 0 &&
                 allPosts.map((post) => (
@@ -19,9 +24,7 @@ export default function HomePage({ allPosts }) {
             </div>
           </div>
           <div className="min-w-xs mt-8 md:mt-0">
-            <div className="md:text-center text-gray-600 font-bold">
-              Portfolio:
-            </div>
+            <TitleLabel className="md:text-center">Portfolio:</TitleLabel>
             <div className="px-4 py-8 flex flex-col justify-start md:items-center md:justify-center">
               <a
                 href="https://tituy-client.now.sh/"
@@ -40,8 +43,9 @@ export default function HomePage({ allPosts }) {
                     people.
                   </div>
                   <img
-                    src="/images/tituy.png"
+                    src="/images/tituy.jpg"
                     className="w-48 h-48 rounded-full object-cover mt-4"
+                    alt="Screenshot for Tituy"
                   />
                 </div>
               </a>

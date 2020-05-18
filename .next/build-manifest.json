@@ -32,7 +32,11 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/writing": [
+    "/next/dist/pages/_error": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/posts/[slug]": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]
