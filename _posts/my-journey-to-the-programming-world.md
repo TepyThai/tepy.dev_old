@@ -10,39 +10,53 @@ ogImage:
   url: '/images/blog/my-programming-journey/cover.jpg'
 ---
 
-Hi, I'm Tepy, from Cambodia 🇰🇭.
-I came to Japan in 2015 to pursue my undergraduate study in
-Computer Science with a full scholarship.
+Hi, I'm Tepy, a Frontend Developer from Cambodia 🇰🇭 who is currently studying Computer Science in Japan.
+
+I decided to become a Frontend Developer about 2 years ago after I started learning about the WEB, especially _React.js_.
+The reason I chose to become a Frontend Developer despite having interest in being a Fullstack Developer as well
+is that I enjoy seeing the result of my works **immediately** and I am quite interested in beautiful **UI/UX** as well.
+
+Before entering the WEB territory, I think I have had quite a long story about how I even got myself into the programming world, which I would like to write about in the following context.
+
+## High School
+
+> Mathematics Lover
+
+During my 3 years in high school, I had a _dream goal_ of getting into **The Top 10** rank in the _National Mathematics Olympiad_ in 2012.
+
+I spent all my free time studying Math just for that competition. Thanks to the lack of internet availabilty at my hometown (I live in a rural area), I was able to put all my concentration in studying Math.
+
+As the result of endlessly solving many Math problems everyday for 3 years, I was able to achieve my dream goal where I placed **1st** in the _National Mathematics Olympiad_. It would be a lie if I told you it was not my greatest achievment in my life :D
 
 ## After High School
 
-Back in Cambodia in 2012, I was majored in Civil Engineering since I didn't know what I really wanted to do back then. After
-studying for almost 2 years, I found myself having more interest
-in programming than civil engineering.
+> Clueless about future goal
 
-I started my first line of code in **Lua** while trying
-to make mobile game with my friends. I started out as I was
-really curious about how people make games or applications by
-that time, but eventually I got hooked into the world of
-programming without knowing it myself.
+Even tho I achieved my dream goal, I barely knew anything related to what I want to become in the future. Due to the lack of information, I chose to study Civil Engineering as it is quite a common major for a student who is good at Math to choose back then in Cambodia.
+
+In the 1st year in college, there was a compulsary course about general knowledge of computer and internet that introduced me to know more about computer in general. After that course, I only gained the general knowledge of computer, nothing more nothing less.
+
+## My first line of code
+
+After hanging out with a few Computer Science friends of mine, I started my first line of code in `Lua` while trying to make mobile game with them. I started out as I was really curious about how people make games and applications by that time, but eventually I got hooked into the world of programming without knowing it myself.
+
+Later on, I kept finding myself spending more and more time learning different things related to programming. Starting from taking `Python` class as one of my elective courses to publishing my first ever mobile game. It was a clone of Flappy Bird game since that game was super popular at that time. However, what I did was creating my own assets and wrote some really lame logic for the flying logic (I knew nothing about `physics logic for game`) for the bird :D and I could not understand at all when it comes to much difficult code.
 
 ## Coming to Japan
 
-Fast forward to 2015, I decided to change my major to Computer
-Science as I started my new chapter in Japan as a college
-student here. During my 1st year in Japan, I needed to take
-Japanese class over the course of 1 year, so during that time I
-could only learn programming during my spare time only.
+> New journey begins
 
-As I started out as a self-taught programmer, it really took me
-quite a long time to finally understand the **Foundation of Programming**. I could recall being
-confused between **i++** and **++i** for quite
-some time.
+Fast forward to 2015, I decided to change my major to Computer Science as I started my new chapter in Japan as a college student here. During my 1st year in Japan, I needed to take Japanese class over the course of 1 year, so during that time I could only learn programming during my spare time.
+
+As I started out as a self-taught programmer, it really took me quite a long time to finally understand the **Foundation of Programming**. I could recall being confused between **i++** and **++i** for quite some time. Also, as a beginner I could not understand well how `while` and `for` loops really work at all.
 
 ## Into the real-world development
 
-After I finally have conquered the foundation in **C**,
-I started building **Android Applications** with **Udacity's Nanodegree Online Course**.
+> What keeps me going
+
+After I finally have conquered the foundation in **C**, I started building **Android Applications** with **Udacity's Nanodegree Online Course**. Since I like seeing the result of my work immediately, building applications really encourages me to learn to code much better than just learning the basics.
+
+While building mobile application, I have learned to
 
 ## From Native Mobile to the Web
 
