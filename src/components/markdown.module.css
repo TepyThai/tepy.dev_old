@@ -9,6 +9,14 @@
   @apply my-6 leading-8 tracking-wider;
 }
 
+.markdown blockquote {
+  @apply border-l-4 .border-teal-600 px-3 opacity-75 .italic .rounded-sm;
+}
+
+.markdown strong {
+  @apply border-b-2 border-teal-400;
+}
+
 .markdown h2 {
   @apply font-body font-bold text-3xl mt-12 mb-4 leading-snug;
 }

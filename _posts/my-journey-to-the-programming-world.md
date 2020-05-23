@@ -54,16 +54,32 @@ As I started out as a self-taught programmer, it really took me quite a long tim
 
 > What keeps me going
 
-After I finally have conquered the foundation in **C**, I started building **Android Applications** with **Udacity's Nanodegree Online Course**. Since I like seeing the result of my work immediately, building applications really encourages me to learn to code much better than just learning the basics.
+After I finally have solidated the foundation in **C**, I started building **Android Applications** with **Udacity's Nanodegree Online Course**. Since I like seeing the result of my work immediately, building applications really encourages me to learn to code much better than just learning the basics.
 
-While building mobile application, I have learned to
+While building mobile application, I have learned to understand how an application is built with seperated pieces. It is composed of the **UI**(frontend) and the **Data** and many other parts together. As an application engineer, I spent most of the time implementing the UI look of the application and fetched the data from various apis to fill in the application.
+
+That's also when I've first learned about **API**. At first, I was not sure how the api really works at all. All I knew was that I could retrieve data from it and use it in my application. After a while, I got used to calling the api to get some data with some libraries and use it in the app. Then eventually I got to touch the **database** of the app when I tried to store data that I got from the api for offline usage. Writing database's query was something new to me as I was always dealing with just the UI of the app. So I found it somehow confusing most of the time.
+
+I also first learned a bit about the application archeticture such as MVVP, MVP etc.
 
 ## From Native Mobile to the Web
 
+> Expanding knowledge
+
+While I learned a lot building native application, I felt something is lacked with my current knowledge.
+
 ## React.js
+
+> Where it all started again
 
 ## Internships
 
+> Gold opportunities
+
 ## Current
 
+> Finding my first fulltime job
+
 ## Ending thought
+
+> Keep on learning
