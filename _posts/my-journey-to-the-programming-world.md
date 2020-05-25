@@ -33,7 +33,7 @@ As the result of endlessly solving many Math problems everyday for 3 years, I wa
 
 > Clueless about future goal
 
-Even tho I achieved my dream goal, I barely knew anything related to what I want to become in the future. Due to the lack of information, I chose to study Civil Engineering as it is quite a common major for a student who is good at Math to choose back then in Cambodia.
+Even though I achieved my dream goal, I barely knew anything related to what I want to become in the future. Due to the lack of information, I chose to study Civil Engineering as it is quite a common major for a student who is good at Math to choose back then in Cambodia.
 
 In the 1st year in college, there was a compulsary course about general knowledge of computer and internet that introduced me to know more about computer in general. After that course, I only gained the general knowledge of computer, nothing more nothing less.
 

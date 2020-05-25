@@ -15,7 +15,7 @@ function About() {
   return (
     <Layout>
       <div className="pt-10 flex max-w-post mx-auto justify-center items-center">
-        {loading && <Logo className="h-64 w-64" />}
+        {loading && <Logo className="h-64 w-32" />}
         {!loading && (
           <div className="leading-10">
             <div>Hi, thanks for checking out about me.</div>
@@ -26,12 +26,12 @@ function About() {
               </span>
               . I'm from Cambodia.
             </div>
-            <div>I speak Khmer 🇰🇭, English 🏴󠁧󠁢󠁥󠁮󠁧󠁿, Japanese 🇯🇵.</div>
+            <div>I speak Khmer 🇰🇭, English 🇬🇧󠁧󠁢, Japanese 🇯🇵.</div>
             <div>I call myself a Web Developer who focus on Frontend. </div>
             <div>
-              I work mostly with <span className="text-primary">React</span> and{' '}
-              <span className="text-primary">Node</span> sometimes as my
-              Backend.
+              I work mostly with <span className="text-primary">React</span> as
+              my Frontend framework and{' '}
+              <span className="text-primary">Node</span> as my Backend.
             </div>
             <div>
               I'm currently finding my first job as a Frontend Developer after
