@@ -3,6 +3,7 @@ title: 'My Journey to the Programming World'
 excerpt: ''
 # coverImage: '/assets/blog/dynamic-routing/cover.jpg'
 date: '2020-05-18T03:55:07.322Z'
+isPublished: true
 author:
   name: Tepy Thai
   picture: '/images/blog/author/tepy.png'
@@ -66,20 +67,62 @@ I also first learned a bit about the application archeticture such as MVVP, MVP 
 
 > Expanding knowledge
 
-While I learned a lot building native application, I felt something is lacked with my current knowledge.
+While I learned a lot building native application, I felt something is lacked with my current knowledge. Yes, it's the `How is the API built?`. That thought of wanting to learn and build my own api lets me to venture into the web domain.
 
 ## React.js
 
 > Where it all started again
 
+I started off with the thought of wanting to build my own api, but what got me hooked was the **Frontend** part of the web instead. That was because, again, I am quite interested in the **UI/UX** part myself.
+
+That's when I got introduced to **React.js** 2 years ago. I chose React as the web framework (well, React is basically a library) not because of any specific reason. It was just because it was pretty popular than the others. However, the more I learn about React and use it, the more I like about it.
+
+Over the last 2 years, **React** has taught me many new aspects of developing application. The following aspects are a few of those aspects where I feel I have come to give more concern with as I grow as a developer. I believe it would be the same experience with other web frameworks, not just with React.
+
+You can read more about how what I have learned from React [here](http://localhost:3000/posts/what-i-have-learned-from-react-js).
+
 ## Internships
 
 > Gold opportunities
+
+- **<a href="https://www.uzabase.com/" target="_blank" rel="noopener">Uzabase</a>** as a software engineer for 5 weeks:
+
+  > Agile development, pair programming, real life work
+
+  As lucky as I was, I was introduced by a senior for my 2019 summer internship at Uzabase. It was also my first time having an interview with a CTO. Even though it was not a technical interview, it was a great opportunity for me to talk with him about my experience as a developer.
+
+  During my very first internship, I was able to experience the real world of developing and maintaining a production ready website. Even more, I got to work with the team that composes of more than 10 people working together. That was a great lesson in communication for me as I was required to communicate a lot with the team.
+
+  Not only I learned about how people work in the real world, it opened a new door for me to the other side of what I have been doing (frontend stuffs). Since the team uses **Agile Development** and **Pair Programming**, I got to understand how important those **2** pieces are for a prodution team.
+
+  At first I felt a bit off doing pair programming with the engineers there since I was used to code by myself all the time. However, after doing it for a week and an explaination of how we should do pair programming from them, I felt like it was one of the best way to improve any developer's skills. Pair programming doesn't only give you the opportunity to think first before you start to code, but also train you to properly explain your solution to your peer. By learning to do so, you will be able to adapt yourself to give better explanation in a **precise** way to other people, which is an **absolute important** skill every developer should have.
+
+- **<a href="https://www.wantedly.com/" target="_blank" rel="noopener">Wantedly</a>** as a Frontend Engineer for 2 weeks:
+
+  > React, Graphql, Typescript, GitHub (get used to PR, Issues etc...)
+
+  This time, it was my first time being a Frontend Developer and I got the opportunity to use React as well as my other favorite stack such as Graphql, Typescript.
+
+  During the period of just 2 weeks, I was able to learn a tremedous amount of knowledge from working on the project as well as from the advice of my mentor. I got the chance to apply what I have been learning about React to improve the project and got myself adapting to working with a large codebase as well. Also, since the stack that they are using there is really cutting edge, it suits me really well since I also love to test out those cutting edge stuffs too.
+
+  It was also an eyes opener for me as well to see that there are many new things about React that I didn't know or haven't seen before. One of them was the technique that is used to sync the state of UI with the `URL`. Well, it is fairly just a technique, but before I've seen it, I didn't think of having to do so at all. That's why it surprised me. Another one was the usage of `useMemo`. I did read about it and also quite understand about it, but since most of the projects that I were working on by myself are quite small, I didn't think of optimizing the performance much at all **from the start**. That is why I didn't really utilize the usage of `useMemo` at all.
+
+  Furthermore, I also got the chance to get used to creating `Pull Request` and `Issues` on GitHub as well. Since most of the communication was done within GitHub, I was able to train myself to write more `Docs` and `Discussion` on the platform as well.
 
 ## Current
 
 > Finding my first fulltime job
 
+As I am going to graduate in **March 2021** and I want to become a fulltime **Frontend Developer (or Software Developer)**, I am actively applying and searching for a job right now. Since I plan to live in **Japan** for at least a couple of years after my graduation, it would be nice to get my job in Japan. However, I am also open to negotiation with any offers, so do not hesitate to ping me up 😄.
+
+Besides finding the job, I think it is really the **time** for me to get myself **giving** back to the community of developers where I have been learning from all this time. I plan to regularly write **blog post** about what I have learned, especially **React/Frontend Dev**. Also, I am looking forward to giving myself the time to make some **video tutorials** as well. So please keep an eye on my <a href="https://twitter.com/TepyThai" target="_blank" rel="noopener">twitter</a> as well.
+
 ## Ending thought
 
 > Keep on learning
+
+First of all if you read this far, thanks for reading. This is my very first blog post so I hope you enjoy it.
+
+I have come all the way to what I am now by **mostly** learn everything **online**. And after coming to the **web** world, I became really curious about learning all these **cutting edge** stuffs that are progressively being created as I am writing this post. So I really look forward to checking out more stuffs and **possibly teach** people back about what I learn along the way.
+
+Again, thanks for reading this.

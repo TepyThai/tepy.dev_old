@@ -14,6 +14,11 @@ export default function Post({ post }) {
           <meta property="og:image" content={post.ogImage.url} />
         </Head>
         <div className="max-w-post mx-auto">
+          {!post.isPublished && (
+            <div className="text-center bg-red-600 text-white p-3 rounded mt-8">
+              Hey, this is still a Draft 😄
+            </div>
+          )}
           <div className="my-24 p-2 text-center ">
             <div className="text-black font-medium text-3xl">{post.title}</div>
             <DateFormater dateStr={post.date} />
@@ -40,6 +45,7 @@ export async function getStaticProps({ params }) {
     'content',
     'author',
     'ogImage',
+    'isPublished',
   ]);
   const content = await md2html(post.content || '');
   return {

@@ -18,7 +18,7 @@ function Writing({ allPosts }) {
 export default Writing;
 
 export async function getStaticProps() {
-  const allPosts = getAllPosts(['title', 'date', 'slug']);
+  const allPosts = getAllPosts(['title', 'date', 'slug', 'isPublished']);
   return {
     props: { allPosts },
   };

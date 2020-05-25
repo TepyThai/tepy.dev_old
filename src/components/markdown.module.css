@@ -24,3 +24,23 @@
 .markdown h3 {
   @apply text-2xl mt-8 mb-4 leading-snug;
 }
+
+.markdown ul>li {
+  @apply list-disc ml-4;
+}
+
+.markdown ol>li {
+  @apply list-decimal ml-4;
+}
+
+.markdown a {
+  @apply border-b-2 border-pink-400 .text-pink-400 px-1 .transition .duration-200 .ease-in-out;
+}
+
+.markdown a:hover {
+  @apply border-b-2 bg-pink-400 text-white;
+}
+
+.markdown code {
+  @apply bg-gray-300 px-1 .rounded;
+}
