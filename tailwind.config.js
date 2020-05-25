@@ -1,8 +1,5 @@
 module.exports = {
-  purge: [
-    './src/**/*.html',
-    './src/**/*.js',
-  ],
+  purge: ['./src/**/*.html', './src/**/*.js'],
   theme: {
     extend: {
       fontFamily: {
@@ -20,6 +17,8 @@ module.exports = {
       },
       colors: {
         primary: '#007B79',
+        twitter: '#30A1F2',
+        github: '#24292E',
       },
     },
   },
