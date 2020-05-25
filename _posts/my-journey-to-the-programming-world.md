@@ -79,7 +79,7 @@ That's when I got introduced to **React.js** 2 years ago. I chose React as the w
 
 Over the last 2 years, **React** has taught me many new aspects of developing application. The following aspects are a few of those aspects where I feel I have come to give more concern with as I grow as a developer. I believe it would be the same experience with other web frameworks, not just with React.
 
-You can read more about how what I have learned from React [here](http://localhost:3000/posts/what-i-have-learned-from-react-js).
+You can read more about how what I have learned from React [here](https://tepy.dev/writing/what-i-have-learned-from-react-js).
 
 ## Internships
 

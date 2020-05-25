@@ -4,7 +4,7 @@ import DateFormater from './DateFormater';
 function PostItem({ post, className, href = '#' }) {
   const { title, date, slug } = post;
   return (
-    <Link as={`/posts/${slug}`} href="/posts/[slug]">
+    <Link as={`/writing/${slug}`} href="/writing/[slug]">
       <div
         className={`group hover:bg-gray-100 transition duration-300 ease-in-out cursor-pointer w-sm py-4 px-6 rounded-lg bg-gray-200 my-4 max-w-xl ${className}`}
       >
