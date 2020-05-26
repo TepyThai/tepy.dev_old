@@ -10,7 +10,7 @@ export default function HomePage({ allPosts }) {
   return (
     <Layout>
       <SocialMeta
-        image="/images/og-image.svg"
+        image="/images/og-image.jpg"
         title="Tepy Thai's Personal Site"
         url="https://tepy.dev"
         description={`Personal website for Tepy Thai. He writes about Frontend and General Programming.`}
