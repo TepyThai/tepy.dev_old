@@ -1,16 +1,21 @@
+import { SkipNavContent } from '@reach/skip-nav';
 import Layout from '../components/Layout';
 import Profile from '../components/Profile';
 import PostItem from '../components/PostItem';
 import { getAllPosts } from '../../lib/api';
-import Head from 'next/head';
+import SocialMeta from '../components/meta';
 import TitleLabel from '../components/TitleLabel';
 
 export default function HomePage({ allPosts }) {
   return (
     <Layout>
-      <Head>
-        <title>Tepy Thai</title>
-      </Head>
+      <SocialMeta
+        image="/images/og-image.svg"
+        title="Tepy Thai's Personal Site"
+        url="https://tepy.dev"
+        description={`Personal website for Tepy Thai. He writes about Frontend and General Programming.`}
+      />
+      <SkipNavContent />
       <div className="mx-auto">
         <Profile />
         <div className="flex flex-col md:flex-row justify-between items-start">
