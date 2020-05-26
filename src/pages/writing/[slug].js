@@ -4,10 +4,17 @@ import md2html from '../../../lib/md2html';
 import Layout from '../../components/Layout';
 import DateFormater from '../../components/DateFormater';
 import PostBody from '../../components/PostBody';
+import SocialMeta from '../../components/meta';
 
 export default function Post({ post }) {
   return (
     <Layout>
+      <SocialMeta
+        title={`${post.title} | Tepy Thai's Blog`}
+        image={post.ogImage.url}
+        keywords={`programming journey, tepythai, dev journey, dev story`}
+        description={post.title}
+      />
       <article>
         <Head>
           <title>{post.title} | Tepy Thai</title>
