@@ -7,11 +7,11 @@ export default ({ title, description, image, url, keywords }) => (
       name="twitter:card"
       content={image ? 'summary_large_image' : 'summary'}
     />
-    {title && <meta name="og:title" content={title} />}
-    {url && <meta name="og:url" content={url} />}
-    {description && <meta name="description" content={description} />}
-    {description && <meta name="og:description" content={description} />}
-    {image && <meta name="og:image" content={`https://tepy.dev${image}`} />}
-    {keywords && <meta name="keywords" content={keywords} />}
+    {title && <meta property="og:title" content={title} />}
+    {url && <meta property="og:url" content={url} />}
+    {/* {description && <meta property="description" content={description} />} */}
+    {description && <meta property="og:description" content={description} />}
+    {image && <meta property="og:image" content={`https://tepy.dev${image}`} />}
+    {keywords && <meta property="keywords" content={keywords} />}
   </Head>
 );

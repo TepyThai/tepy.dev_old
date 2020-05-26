@@ -14,6 +14,7 @@ export default function HomePage({ allPosts }) {
         title="Tepy Thai's Personal Site"
         url="https://tepy.dev"
         description={`Personal website for Tepy Thai. He writes about Frontend and General Programming.`}
+        keywords="Tepy Thai, tepy, tepythai,tepythai react, tepythai blog, reactjs, react.js, next.js, gatsby.js,frontend"
       />
       <SkipNavContent />
       <div className="mx-auto">
