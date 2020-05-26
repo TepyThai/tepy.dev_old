@@ -8,7 +8,7 @@ function Layout({ children }) {
       <Head>
         <title>{`Tepy Thai's Personal Site`}</title>
         <meta
-          name="description"
+          property="description"
           content={`Personal website for Tepy Thai. He writes about Frontend and General Programming.`}
         />
       </Head>
