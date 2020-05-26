@@ -11,15 +11,15 @@ export default function Post({ post }) {
     <Layout>
       <SocialMeta
         title={`${post.title} | Tepy Thai's Blog`}
-        image={post.ogImage.url}
+        image={`${post.ogImage.url}`}
         keywords={`programming journey, tepythai, dev journey, dev story`}
         description={post.title}
       />
       <article>
-        <Head>
+        {/* <Head>
           <title>{post.title} | Tepy Thai</title>
           <meta property="og:image" content={post.ogImage.url} />
-        </Head>
+        </Head> */}
         <div className="max-w-post mx-auto">
           {!post.isPublished && (
             <div className="text-center bg-red-600 text-white p-3 rounded mt-8">
