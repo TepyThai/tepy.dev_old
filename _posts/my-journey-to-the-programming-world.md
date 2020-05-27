@@ -8,7 +8,7 @@ author:
   name: Tepy Thai
   picture: '/images/blog/author/tepy.png'
 ogImage:
-  url: '/images/blog/my-programming-journey/cover.jpg'
+  url: '/images/blog/my-programming-journey/cover.webp'
 ---
 
 Hi, I'm Tepy, a Frontend Developer from Cambodia 🇰🇭 who is currently studying Computer Science in Japan.
