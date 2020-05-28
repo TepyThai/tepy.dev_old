@@ -18,7 +18,7 @@ function About() {
         {loading && <Logo className="h-64 w-32" />}
         {!loading && (
           <div className="leading-10">
-            <div>Hi, thanks for checking out about me.</div>
+            <div>Hi, thanks for checking me out.</div>
             <div>
               I'm{' '}
               <span className="font-bold text-primary text-xl underline">
@@ -39,9 +39,9 @@ function About() {
             </div>
             <div>
               If you are looking for a developer who is passionate about
-              Frontend and eager to learn about{' '}
-              <span className="text-primary">New Technologies</span>, I'm more
-              than happy if you would consider me.
+              <span className="text-primary"> Frontend</span> and eager to learn
+              about <span className="text-primary">New Technologies</span>, I'm
+              more than happy if you would consider me.
             </div>
             <div>You can contact me via the following options:</div>
             <div className="w-64 mx-auto">

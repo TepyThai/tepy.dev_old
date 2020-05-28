@@ -11,6 +11,8 @@ ogImage:
   url: '/images/blog/my-programming-journey/cover.jpg'
 ---
 
+The following aspects are a few of those aspects where I feel I have come to give more concern with as I grow as a developer.
+
 - **State Management**:<br/>
   I think the most important thing that I've learned with building web site or app is that, State Management is a significant part that every developer (at least frontend dev 😄) should pay attention to. When I was developing native app, I didn't really care much about state management of the app at all since the interaction of the app is quite limited comparing to the web, so most of the apps don't really have complex state management at all (maybe I could be wrong here since I didn't get the chance to make a complicated enough native app yet I think 🤔).
 

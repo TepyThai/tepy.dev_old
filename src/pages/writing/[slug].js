@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import { getPostBySlug, getAllPosts } from '../../../lib/api';
 import md2html from '../../../lib/md2html';
 import Layout from '../../components/Layout';
@@ -13,13 +12,9 @@ export default function Post({ post }) {
         title={`${post.title} | Tepy Thai's Blog`}
         image={`${post.ogImage.url}`}
         keywords={`programming journey, tepythai, dev journey, dev story`}
-        description={post.title}
+        description={post.excerpt || ''}
       />
       <article>
-        {/* <Head>
-          <title>{post.title} | Tepy Thai</title>
-          <meta property="og:image" content={post.ogImage.url} />
-        </Head> */}
         <div className="max-w-post mx-auto">
           {!post.isPublished && (
             <div className="text-center bg-red-600 text-white p-3 rounded mt-8">
@@ -53,6 +48,7 @@ export async function getStaticProps({ params }) {
     'author',
     'ogImage',
     'isPublished',
+    'excerpt',
   ]);
   const content = await md2html(post.content || '');
   return {
