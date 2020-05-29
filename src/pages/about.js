@@ -17,7 +17,7 @@ function About() {
       <div className="pt-10 flex max-w-post mx-auto justify-center items-center">
         {loading && <Logo className="h-64 w-32" />}
         {!loading && (
-          <div className="leading-10">
+          <div className="leading-10 transition duration-300 ease-in-out">
             <div>Hi, thanks for checking me out.</div>
             <div>
               I'm{' '}
