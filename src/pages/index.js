@@ -2,11 +2,12 @@ import { SkipNavContent } from '@reach/skip-nav';
 import Layout from '../components/Layout';
 import Profile from '../components/Profile';
 import PostItem from '../components/PostItem';
-import { getAllPosts } from '../../lib/api';
+import { getAllPosts, getAllTILs } from '../../lib/api';
 import SocialMeta from '../components/meta';
 import TitleLabel from '../components/TitleLabel';
+import TILItem from '../components/TILItem';
 
-export default function HomePage({ allPosts }) {
+export default function HomePage({ allPosts, allTILs }) {
   return (
     <Layout>
       <SocialMeta
@@ -21,13 +22,26 @@ export default function HomePage({ allPosts }) {
         <Profile />
         <div className="flex flex-col md:flex-row justify-between items-start">
           <div>
-            <TitleLabel>Recent Writing:</TitleLabel>
-            <div className="mt-8">
-              {allPosts.length > 0 &&
-                allPosts.map((post) => (
-                  <PostItem post={post} key={post.slug} />
-                ))}
-            </div>
+            {allPosts.length > 0 && (
+              <div>
+                <TitleLabel>Recent Writing:</TitleLabel>
+                <div className="mt-8">
+                  {allPosts.map((post) => (
+                    <PostItem post={post} key={post.slug} />
+                  ))}
+                </div>
+              </div>
+            )}
+            {allTILs.length > 0 && (
+              <div className="mt-8">
+                <TitleLabel>Today I Learned:</TitleLabel>
+                <div>
+                  {allTILs.map((til) => (
+                    <TILItem til={til} key={til.slug} />
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
           <div className="min-w-xs mt-8 md:mt-0">
             <TitleLabel className="md:text-center">Portfolio:</TitleLabel>
@@ -65,7 +79,8 @@ export default function HomePage({ allPosts }) {
 
 export async function getStaticProps() {
   const allPosts = getAllPosts(['title', 'date', 'slug', 'isPublished']);
+  const allTILs = getAllTILs(['title', 'date', 'slug', 'isPublish']);
   return {
-    props: { allPosts },
+    props: { allPosts, allTILs },
   };
 }

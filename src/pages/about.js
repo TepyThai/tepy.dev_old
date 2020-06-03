@@ -6,6 +6,8 @@ import { FaGithub, FaTwitter } from 'react-icons/fa';
 
 function About() {
   const [loading, setLoading] = useState(true);
+  // hacking the animation's loading (will refactor)
+  //couldn't figure out the onAnimationEnded from motion yet
   useEffect(() => {
     if (loading) {
       setTimeout(() => setLoading(false), 1500);

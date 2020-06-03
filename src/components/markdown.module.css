@@ -44,3 +44,11 @@
 .markdown code {
   @apply bg-gray-300 px-1 .rounded;
 }
+
+.markdown pre {
+  @apply .rounded-md p-4 .overflow-auto;
+}
+
+.markdown pre>code {
+  @apply .bg-transparent;
+}
