@@ -32,15 +32,7 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/til": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
     "/til/[slug]": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/writing": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]
