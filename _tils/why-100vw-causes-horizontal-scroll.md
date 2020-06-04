@@ -35,6 +35,6 @@ var docWidth = document.documentElement.offsetWidth;
 
 - Most of the times, I always find the `100vw` value on the `width` that cause the overflow. So, if that is the case, you can try replacing it with `width: 100%` instead and see if it works.
 
-So, back the title, why would `100vw` be the cause? Well, the answer is:
+So, back to the title, why would `100vw` be the cause? Well, the answer is:
 
 > When you set an element's width to `100vw`, the element's width now will be the whole `view width` of the browser and the important part is **`100vw` does not include the `vertical scrollbar`'s `width` into its calculation at all**. Therefore, when there is a `vertical scrollbar`, the `total width` will be the sum of `element's width` and `vertical scrollbar's width`, which causes the **`horizontal scrollbar`**.
