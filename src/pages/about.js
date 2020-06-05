@@ -60,10 +60,24 @@ function About() {
                 href="https://twitter.com/TepyThai"
                 target="_blank"
                 rel="noopener"
-                className="flex justify-center items-center bg-twitter text-center text-white rounded-full max-w-xs cursor-pointer hover:bg-gray-200 hover:text-twitter transform hover:-translate-y-1 transition duration-200 ease-in-out"
+                className="my-4 flex justify-center items-center bg-twitter text-center text-white rounded-full max-w-xs cursor-pointer hover:bg-gray-200 hover:text-twitter transform hover:-translate-y-1 transition duration-200 ease-in-out"
               >
                 <span className="mr-2">Twitter</span>
                 <FaTwitter />
+              </a>
+              <a
+                href="https://dev.to/tepythai"
+                target="_blank"
+                rel="noopener"
+                className="flex justify-center items-center bg-dev text-center text-black rounded-full max-w-xs cursor-pointer hover:bg-gray-200 transform hover:-translate-y-1 transition duration-200 ease-in-out"
+              >
+                <span className="mr-2">Dev</span>
+                <img
+                  src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg"
+                  alt="Tepy Thai's DEV Profile"
+                  height="30"
+                  width="30"
+                />
               </a>
             </div>
             <div className="mt-4">Also, you can read more about me here:</div>

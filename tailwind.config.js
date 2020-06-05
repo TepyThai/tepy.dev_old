@@ -19,6 +19,7 @@ module.exports = {
         primary: '#007B79',
         twitter: '#30A1F2',
         github: '#24292E',
+        dev: '#e2e2e2',
       },
     },
   },
