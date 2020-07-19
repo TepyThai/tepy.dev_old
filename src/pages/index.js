@@ -46,11 +46,7 @@ export default function HomePage({ allPosts, allTILs }) {
           <div className="min-w-xs mt-8 md:mt-0">
             <TitleLabel className="md:text-center">Portfolio:</TitleLabel>
             <div className="px-4 py-8 flex flex-col justify-start md:items-center md:justify-center">
-              <a
-                href="https://tituy-client.now.sh/"
-                target="_blank"
-                rel="noopener"
-              >
+              <a href="https://teatui.com" target="_blank" rel="noopener">
                 <div
                   className="transform transition duration-300 ease-in-out hover:-translate-y-2 flex flex-col items-center justify-center py-8 px-4 min-w-xs max-w-sm border border-primary rounded-md hover:bg-gray-100 bg-white "
                   style={{ backdropFilter: 'blur(0.8)' }}
