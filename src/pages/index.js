@@ -52,7 +52,7 @@ export default function HomePage({ allPosts, allTILs }) {
                   style={{ backdropFilter: 'blur(0.8)' }}
                 >
                   <div className="font-bold pb-4 text-xl text-primary">
-                    Tituy
+                    Teatui
                   </div>
                   <div className="text-gray-800 px-4">
                     Reading, Writing, Sharing online platform for Cambodian
@@ -61,7 +61,7 @@ export default function HomePage({ allPosts, allTILs }) {
                   <img
                     src="/images/tituy.jpg"
                     className="w-48 h-48 rounded-full object-cover mt-4"
-                    alt="Screenshot for Tituy"
+                    alt="Screenshot for Teatui"
                   />
                 </div>
               </a>
