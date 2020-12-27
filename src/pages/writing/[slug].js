@@ -1,5 +1,5 @@
-import { getPostBySlug, getAllPosts } from '../../../lib/api';
-import md2html from '../../../lib/md2html';
+import { getPostBySlug, getAllPosts } from '../../lib/api';
+import md2html from '../../lib/md2html';
 import Layout from '../../components/Layout';
 import DateFormater from '../../components/DateFormater';
 import PostBody from '../../components/PostBody';

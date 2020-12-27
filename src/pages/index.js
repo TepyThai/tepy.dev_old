@@ -2,10 +2,10 @@ import { SkipNavContent } from '@reach/skip-nav';
 import Layout from '../components/Layout';
 import Profile from '../components/Profile';
 import PostItem from '../components/PostItem';
-import { getAllPosts, getAllTILs } from '../../lib/api';
 import SocialMeta from '../components/meta';
 import TitleLabel from '../components/TitleLabel';
 import TILItem from '../components/TILItem';
+import { getAllPosts, getAllTILs } from '../lib/api';
 
 export default function HomePage({ allPosts, allTILs }) {
   return (
@@ -19,7 +19,7 @@ export default function HomePage({ allPosts, allTILs }) {
       />
       <SkipNavContent />
       <div className="mx-auto">
-        <Profile />
+        {/* <Profile /> */}
         <div className="flex flex-col md:flex-row justify-between items-start">
           <div>
             {allPosts.length > 0 && (
@@ -44,7 +44,9 @@ export default function HomePage({ allPosts, allTILs }) {
             )}
           </div>
           <div className="min-w-xs mt-8 md:mt-0">
-            <TitleLabel className="md:text-center">Portfolio:</TitleLabel>
+            <TitleLabel className="md:text-center uppercase">
+              Portfolio
+            </TitleLabel>
             <div className="px-4 py-8 flex flex-col justify-start md:items-center md:justify-center">
               <a href="https://teatui.com" target="_blank" rel="noopener">
                 <div

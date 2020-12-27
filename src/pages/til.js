@@ -1,7 +1,7 @@
 import Layout from '../components/Layout';
-import { getAllTILs } from '../../lib/api';
 import TitleLabel from '../components/TitleLabel';
 import TILItem from '../components/TILItem';
+import { getAllTILs } from '../lib/api';
 
 function TIL({ allTILs }) {
   return (

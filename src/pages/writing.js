@@ -1,6 +1,6 @@
 import Layout from '../components/Layout';
 import PostItem from '../components/PostItem';
-import { getAllPosts } from '../../lib/api';
+import { getAllPosts } from '../lib/api';
 import TitleLabel from '../components/TitleLabel';
 
 function Writing({ allPosts }) {
