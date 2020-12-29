@@ -6,10 +6,12 @@ import SocialMeta from '../components/meta';
 import TitleLabel from '../components/TitleLabel';
 import TILItem from '../components/TILItem';
 import { getAllPosts, getAllTILs } from '../lib/api';
+import PageHead from '../components/page-head';
 
 export default function HomePage({ allPosts, allTILs }) {
   return (
     <Layout>
+      <PageHead />
       <SocialMeta
         image="/images/og-image.png"
         title="Tepy Thai's Personal Site"

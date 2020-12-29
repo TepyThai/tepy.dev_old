@@ -4,7 +4,7 @@ export default function SocialMeta({
   title,
   description,
   image,
-  url,
+  url = '',
   keywords,
 }) {
   return (

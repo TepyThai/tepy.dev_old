@@ -11,6 +11,14 @@ module.exports = {
           'sans-serif',
           'cursive',
         ],
+        space: ['Space Grotesk', 'sans-serif'],
+        roboto: [
+          'Roboto',
+          '"Open Sans"',
+          'Montserrat',
+          'sans-serif',
+          'cursive',
+        ],
       },
       maxWidth: {
         post: '675px',

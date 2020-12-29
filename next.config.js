@@ -59,4 +59,18 @@ module.exports = {
     };
     return cfg;
   },
+  async redirects() {
+    return [
+      {
+        source: '/writing/:slug',
+        destination: '/blog/:slug', // Matched parameters can be used in the destination
+        permanent: true,
+      },
+      {
+        source: '/til/:slug',
+        destination: '/blog/:slug', // Matched parameters can be used in the destination
+        permanent: true,
+      },
+    ];
+  },
 };

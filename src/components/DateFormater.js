@@ -1,6 +1,6 @@
 import { parseISO, format } from 'date-fns';
 
-export default function DateFormater({ dateStr, className, ...rest }) {
+export default function DateFormater({ dateStr, className = '', ...rest }) {
   const date = parseISO(dateStr);
   return (
     <time
