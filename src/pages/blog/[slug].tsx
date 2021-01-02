@@ -161,7 +161,7 @@ const RenderPost = ({ post, redirect, preview }) => {
               </div>
             </div>
           )}
-          <div>
+          <div className="font-markdown text-lg leading-relaxed break-words">
             <h1>{post.Page || ''}</h1>
             {post.Authors.length > 0 && (
               <div className="authors">By: {post.Authors.join(' ')}</div>

@@ -5,10 +5,9 @@ import PostItem from '../components/PostItem';
 import SocialMeta from '../components/meta';
 import TitleLabel from '../components/TitleLabel';
 import TILItem from '../components/TILItem';
-import { getAllPosts, getAllTILs } from '../lib/api';
 import PageHead from '../components/page-head';
 
-export default function HomePage({ allPosts, allTILs }) {
+export default function HomePage({ allPosts = [], allTILs = [] }) {
   return (
     <Layout>
       <PageHead />
@@ -23,28 +22,6 @@ export default function HomePage({ allPosts, allTILs }) {
       <div className="mx-auto">
         {/* <Profile /> */}
         <div className="flex flex-col md:flex-row justify-between items-start">
-          <div>
-            {allPosts.length > 0 && (
-              <div>
-                <TitleLabel>Recent Writing:</TitleLabel>
-                <div className="mt-8">
-                  {allPosts.map((post) => (
-                    <PostItem post={post} key={post.slug} />
-                  ))}
-                </div>
-              </div>
-            )}
-            {allTILs.length > 0 && (
-              <div className="mt-8">
-                <TitleLabel>Today I Learned:</TitleLabel>
-                <div>
-                  {allTILs.map((til) => (
-                    <TILItem til={til} key={til.slug} />
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
           <div className="min-w-xs mt-8 md:mt-0">
             <TitleLabel className="md:text-center uppercase">
               Portfolio
@@ -75,12 +52,4 @@ export default function HomePage({ allPosts, allTILs }) {
       </div>
     </Layout>
   );
-}
-
-export async function getStaticProps() {
-  const allPosts = getAllPosts(['title', 'date', 'slug', 'isPublished']);
-  const allTILs = getAllTILs(['title', 'date', 'slug', 'isPublish']);
-  return {
-    props: { allPosts, allTILs },
-  };
 }
