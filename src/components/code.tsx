@@ -29,8 +29,7 @@ const Code = ({ children, language = 'javascript' }) => {
           font-family: Operator Mono SSm A, Operator Mono SSm B, Source Code Pro,
             Menlo, Consolas, Monaco, monospace;
           clear: both;
-          color: #fff;
-          background: #1b1b1b;
+          background: #1F2937;
           padding: 0;
           tab-size: 2;
           word-break: normal;
@@ -39,21 +38,11 @@ const Code = ({ children, language = 'javascript' }) => {
           line-height: 28px;
           border-radius: 8px;
           min-width: 100px;
-          width: max-content;
+          //width: max-content;
           max-width: 100%;
           overflow: hidden;
         }
         code {
-          // overflow: auto;
-          // display: block;
-          // padding: 0.8rem;
-          // line-height: 1.5;
-          // background: #f5f5f5;
-          // font-size: 0.9rem;
-          // border-radius: 0.5rem;
-          // font-weight: 400;
-          // --maxWidth: 1600px;
-          // --gap: 3rem;
           overflow-wrap: break-word;
           color: #fff;
           tab-size: 2;
@@ -62,7 +51,7 @@ const Code = ({ children, language = 'javascript' }) => {
           box-sizing: border-box;
           font-family: Operator Mono SSm A, Operator Mono SSm B, Source Code Pro,
             Menlo, Consolas, Monaco, monospace;
-          background: 0 0;
+          background: #1F2937;
           white-space: pre;
           overflow-x: scroll;
           display: block;

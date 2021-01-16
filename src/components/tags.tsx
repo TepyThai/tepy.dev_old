@@ -16,7 +16,7 @@ export const P = ({ children, className = '', ...rest }) => (
 export const BlockQuote = ({ children, className = '', ...rest }) => (
   <blockquote
     {...rest}
-    className={`my-6 leading-8 tracking-wider border-l-4 .border-teal-600 px-3 opacity-75 .italic .rounded-sm ${className}`}
+    className={`my-6 leading-8 tracking-wider border-l-4 border-teal-600 px-3 opacity-75 italic rounded-sm ${className}`}
   >
     {children}
   </blockquote>
@@ -35,7 +35,13 @@ export const Ol = ({ children, className = '', ...rest }) => (
 );
 
 export const Li = ({ children, className = '', ...rest }) => (
-  <ul {...rest} className={`ml-4 my-6 leading-8 tracking-wider ${className}`}>
+  <li {...rest} className={`ml-4 my-6 leading-8 tracking-wider list-disc ${className}`}>
     {children}
-  </ul>
+  </li>
+);
+
+export const I = ({ children, className = '', ...rest }) => (
+  <i {...rest} className={`${className}`}>
+    {children}
+  </i>
 );

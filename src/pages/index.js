@@ -1,13 +1,10 @@
 import { SkipNavContent } from '@reach/skip-nav';
 import Layout from '../components/Layout';
-import Profile from '../components/Profile';
-import PostItem from '../components/PostItem';
 import SocialMeta from '../components/meta';
 import TitleLabel from '../components/TitleLabel';
-import TILItem from '../components/TILItem';
 import PageHead from '../components/page-head';
 
-export default function HomePage({ allPosts = [], allTILs = [] }) {
+export default function HomePage() {
   return (
     <Layout>
       <PageHead />

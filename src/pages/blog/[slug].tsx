@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import fetch from 'node-fetch';
 import { useRouter } from 'next/router';
-import Header from '../../components/Header';
 import Heading from '../../components/heading';
 import components from '../../components/dynamic';
 import ReactJSXParser from '@zeit/react-jsx-parser';
@@ -14,76 +13,7 @@ import getNotionUsers from '../../lib/notion/getNotionUsers';
 import { getBlogLink, getDateStr } from '../../lib/blog-helpers';
 import Layout from '../../components/Layout';
 import SocialMeta from '../../components/meta';
-import DateFormater from '../../components/DateFormater';
 import '../../components/markdown.module.css';
-
-// Get the data for each blog post
-export async function getStaticProps({ params: { slug }, preview }) {
-  // load the postsTable so that we can get the page's ID
-  const postsTable = await getBlogIndex();
-  const post = postsTable[slug];
-
-  // if we can't find the post or if it is unpublished and
-  // viewed without preview mode then we just redirect to /blog
-  if (!post || (post.Published !== 'Yes' && !preview)) {
-    console.log(`Failed to find post for slug: ${slug}`);
-    return {
-      props: {
-        redirect: '/blog',
-        preview: false,
-      },
-      revalidate: 5,
-    };
-  }
-  const postData = await getPageData(post.id);
-  post.content = postData.blocks;
-
-  for (let i = 0; i < postData.blocks.length; i++) {
-    const { value } = postData.blocks[i];
-    const { type, properties } = value;
-    if (type == 'tweet') {
-      const src = properties.source[0][0];
-      // parse id from https://twitter.com/_ijjk/status/TWEET_ID format
-      const tweetId = src.split('/')[5].split('?')[0];
-      if (!tweetId) continue;
-
-      try {
-        const res = await fetch(
-          `https://api.twitter.com/1/statuses/oembed.json?id=${tweetId}`
-        );
-        const json = await res.json();
-        properties.html = json.html.split('<script')[0];
-        post.hasTweet = true;
-      } catch (_) {
-        console.log(`Failed to get tweet embed for ${src}`);
-      }
-    }
-  }
-
-  const { users } = await getNotionUsers(post.Authors || []);
-  post.Authors = Object.keys(users).map((id) => users[id].full_name);
-
-  return {
-    props: {
-      post,
-      preview: preview || false,
-    },
-    revalidate: 10,
-  };
-}
-
-// Return our list of blog posts to prerender
-export async function getStaticPaths() {
-  const postsTable = await getBlogIndex();
-  // we fallback for any unpublished posts to save build time
-  // for actually published ones
-  return {
-    paths: Object.keys(postsTable)
-      .filter((post) => postsTable[post].Published === 'Yes')
-      .map((slug) => getBlogLink(slug)),
-    fallback: true,
-  };
-}
 
 const listTypes = new Set(['bulleted_list', 'numbered_list']);
 
@@ -139,7 +69,7 @@ const RenderPost = ({ post, redirect, preview }) => {
       </div>
     );
   }
-
+  console.log(post && post.content.map(p => p.value))
   return (
     <Layout>
       <SocialMeta
@@ -162,15 +92,17 @@ const RenderPost = ({ post, redirect, preview }) => {
             </div>
           )}
           <div className="font-markdown text-lg leading-relaxed break-words">
-            <h1>{post.Page || ''}</h1>
-            {post.Authors.length > 0 && (
-              <div className="authors">By: {post.Authors.join(' ')}</div>
-            )}
-            {post.Date && (
-              <div className="posted">Posted: {getDateStr(post.Date)}</div>
-            )}
-
-            <hr />
+            <div className="text-center">
+              <h1 className="text-4xl  font-space my-8">{post.Page || ''}</h1>
+              {post.Authors.length > 0 && (
+                <Link  href="/about">
+                  <a className="inline-block font-space">{post.Authors.join(' ')}</a>
+                </Link>
+              )}
+              {post.Date && (
+                <div className="inline-block text-sm text-primary ml-4">{getDateStr(post.Date)}</div>
+              )}
+            </div>
 
             {(!post.content || post.content.length === 0) && (
               <p>This post has no content</p>
@@ -392,11 +324,11 @@ const RenderPost = ({ post, redirect, preview }) => {
                 }
                 case 'callout': {
                   toRender.push(
-                    <div className="callout" key={id}>
+                    <div className="" key={id}>
                       {value.format?.page_icon && (
-                        <div>{value.format?.page_icon}</div>
+                        <div className="rounded-t-full bg-teal-300 flex items-center justify-center">{value.format?.page_icon}</div>
                       )}
-                      <div className="text">
+                      <div className="bg-teal-200 px-4 pt-2 pb-4 rounded-b-md text-teal-900 ">
                         {textBlock(properties.title, true, id)}
                       </div>
                     </div>
@@ -442,5 +374,73 @@ const RenderPost = ({ post, redirect, preview }) => {
     </Layout>
   );
 };
+
+// Get the data for each blog post
+export async function getStaticProps({ params: { slug }, preview }) {
+  // load the postsTable so that we can get the page's ID
+  const postsTable = await getBlogIndex();
+  const post = postsTable[slug];
+
+  // if we can't find the post or if it is unpublished and
+  // viewed without preview mode then we just redirect to /blog
+  if (!post || (post.Published !== 'Yes' && !preview)) {
+    console.log(`Failed to find post for slug: ${slug}`);
+    return {
+      props: {
+        redirect: '/blog',
+        preview: false,
+      },
+      revalidate: 5,
+    };
+  }
+  const postData = await getPageData(post.id);
+  post.content = postData.blocks;
+
+  for (let i = 0; i < postData.blocks.length; i++) {
+    const { value } = postData.blocks[i];
+    const { type, properties } = value;
+    if (type == 'tweet') {
+      const src = properties.source[0][0];
+      // parse id from https://twitter.com/_ijjk/status/TWEET_ID format
+      const tweetId = src.split('/')[5].split('?')[0];
+      if (!tweetId) continue;
+
+      try {
+        const res = await fetch(
+          `https://api.twitter.com/1/statuses/oembed.json?id=${tweetId}`
+        );
+        const json = await res.json();
+        properties.html = json.html.split('<script')[0];
+        post.hasTweet = true;
+      } catch (_) {
+        console.log(`Failed to get tweet embed for ${src}`);
+      }
+    }
+  }
+
+  const { users } = await getNotionUsers(post.Authors || []);
+  post.Authors = Object.keys(users).map((id) => users[id].full_name);
+
+  return {
+    props: {
+      post,
+      preview: preview || false,
+    },
+    revalidate: 10,
+  };
+}
+
+// Return our list of blog posts to prerender
+export async function getStaticPaths() {
+  const postsTable = await getBlogIndex();
+  // we fallback for any unpublished posts to save build time
+  // for actually published ones
+  return {
+    paths: Object.keys(postsTable)
+      .filter((post) => postsTable[post].Published === 'Yes')
+      .map((slug) => getBlogLink(slug)),
+    fallback: true,
+  };
+}
 
 export default RenderPost;
