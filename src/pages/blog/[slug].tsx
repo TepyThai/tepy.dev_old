@@ -354,7 +354,7 @@ const RenderPost = ({ post, redirect, preview }) => {
                   if (properties.title) {
                     const content = properties.title[0][0];
                     const language = properties.language[0][0];
-
+                    console.log('prop: ', properties);
                     if (language === 'LiveScript') {
                       // this requires the DOM for now
                       toRender.push(

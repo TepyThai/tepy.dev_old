@@ -3,7 +3,7 @@ import components from '../../components/dynamic';
 
 function applyTags(tags = [], children, noPTag = false, key) {
   let child = children;
-  console.log('tags: ', tags);
+  // console.log('tags: ', tags);
   for (const tag of tags) {
     const props: { [key: string]: any } = { key };
     let tagName = tag[0];
@@ -31,7 +31,7 @@ function applyTags(tags = [], children, noPTag = false, key) {
 export function textBlock(text = [], noPTag = false, mainKey) {
   const children = [];
   let key = 0;
-
+  // console.log('text: ', text);
   for (const textItem of text) {
     key++;
     if (textItem.length === 1) {
