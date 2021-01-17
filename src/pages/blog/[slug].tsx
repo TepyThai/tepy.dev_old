@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from "next/image"
 import fetch from 'node-fetch';
 import { useRouter } from 'next/router';
 import Heading from '../../components/heading';
@@ -92,16 +93,21 @@ const RenderPost = ({ post, redirect, preview }) => {
             </div>
           )}
           <div className="font-markdown text-lg leading-relaxed break-words">
-            <div className="text-center">
-              <h1 className="text-4xl  font-space my-8">{post.Page || ''}</h1>
-              {post.Authors.length > 0 && (
-                <Link  href="/about">
-                  <a className="inline-block font-space">{post.Authors.join(' ')}</a>
-                </Link>
-              )}
-              {post.Date && (
-                <div className="inline-block text-sm text-primary ml-4">{getDateStr(post.Date)}</div>
-              )}
+            <div className="text-center my-16">
+              <h1 className="text-4xl font-bold font-space mb-12">{post.Page || ''}</h1>
+              <div className="flex justify-center items-center border-b border-teal-400">
+                {post.Authors.length > 0 && (
+                  <Link  href="/about">
+                    <a className="inline-block font-space mr-4">{post.Authors.join(' ')}</a>
+                  </Link>
+                )}
+                <div className="mr-4">
+                  <Image className="rounded-full object-cover" src="/images/profile.png" width="32" height="32" />
+                </div>
+                {post.Date && (
+                  <div className="inline-block text-sm text-primary">{getDateStr(post.Date)}</div>
+                )}
+              </div>
             </div>
 
             {(!post.content || post.content.length === 0) && (
@@ -237,20 +243,31 @@ const RenderPost = ({ post, redirect, preview }) => {
                     );
                   } else {
                     // notion resource
-                    child = (
-                      <Comp
+                    child = isImage ? (
+                      <div style={childStyle}>
+                        <Image
+                          key={!useWrapper ? id : undefined}
+                          src={`${encodeURIComponent(
+                            display_source as any
+                          )}&blockId=${id}`}
+                          alt={`An ${isImage ? 'image' : 'video'} from Notion`}
+                          width={childStyle.width}
+                          height={childStyle.height}
+                        />
+                      </div>
+                    ) : 
+                      <video
                         key={!useWrapper ? id : undefined}
                         src={`/api/asset?assetUrl=${encodeURIComponent(
                           display_source as any
                         )}&blockId=${id}`}
                         controls={!isImage}
-                        alt={`An ${isImage ? 'image' : 'video'} from Notion`}
                         loop={!isImage}
                         muted={!isImage}
                         autoPlay={!isImage}
                         style={childStyle}
                       />
-                    );
+                    ;
                   }
 
                   toRender.push(
