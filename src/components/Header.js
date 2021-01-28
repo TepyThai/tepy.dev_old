@@ -6,7 +6,7 @@ function Header() {
   return (
     <>
       <nav className="transform -skew-x-6 flex justify-between h-16 border-2 px-4 my-2 border-teal-600 items-center">
-        <Link href="/">
+        <Link href="/" passHref>
           <Logo className="cursor-pointer" />
         </Link>
         <ul className="flex items-center">

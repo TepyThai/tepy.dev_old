@@ -8,7 +8,7 @@ import ReactJSXParser from '@zeit/react-jsx-parser';
 // import blogStyles from '../../styles/blog.module.css';
 import { textBlock } from '../../lib/notion/renderers';
 import getPageData from '../../lib/notion/getPageData';
-import React, { CSSProperties, useEffect } from 'react';
+import React, { CSSProperties, useEffect, useState } from 'react';
 import getBlogIndex from '../../lib/notion/getBlogIndex';
 import getNotionUsers from '../../lib/notion/getNotionUsers';
 import { getBlogLink, getDateStr } from '../../lib/blog-helpers';
@@ -19,6 +19,9 @@ import '../../components/markdown.module.css';
 const listTypes = new Set(['bulleted_list', 'numbered_list']);
 
 const RenderPost = ({ post, redirect, preview }) => {
+  const [imgUrlMap, setImgUrlMap] = useState([])
+  const [srcId, setSrcId] = useState([])
+  const [imgs, setImgs] = useState({})
   const router = useRouter();
 
   let listTagName: string | null = null;
@@ -70,7 +73,7 @@ const RenderPost = ({ post, redirect, preview }) => {
       </div>
     );
   }
-  console.log(post && post.content.map(p => p.value))
+  //console.log(post && post.content.map(p => p.value))
   return (
     <Layout>
       <SocialMeta
@@ -243,19 +246,19 @@ const RenderPost = ({ post, redirect, preview }) => {
                     );
                   } else {
                     // notion resource
-                    child = isImage ? (
-                      <div style={childStyle}>
+                    child = isImage ? 
+                      properties.imgUrl ? (<div className="text-center my-16">
                         <Image
+                          className="rounded"
                           key={!useWrapper ? id : undefined}
-                          src={`${encodeURIComponent(
-                            display_source as any
-                          )}&blockId=${id}`}
+                          src={properties.imgUrl}
                           alt={`An ${isImage ? 'image' : 'video'} from Notion`}
-                          width={childStyle.width}
-                          height={childStyle.height}
+                          width={300}
+                          height={300*block_aspect_ratio}
                         />
+                        <figcaption>{properties.imgCaption}</figcaption>
                       </div>
-                    ) : 
+                    ): <div>NO IMAGE</div> : 
                       <video
                         key={!useWrapper ? id : undefined}
                         src={`/api/asset?assetUrl=${encodeURIComponent(
@@ -271,22 +274,10 @@ const RenderPost = ({ post, redirect, preview }) => {
                   }
 
                   toRender.push(
-                    useWrapper ? (
                       <div
-                        style={{
-                          paddingTop: `${Math.round(
-                            block_aspect_ratio * 100
-                          )}%`,
-                          position: 'relative',
-                        }}
-                        className="asset-wrapper"
-                        key={id}
                       >
                         {child}
                       </div>
-                    ) : (
-                      child
-                    )
                   );
                   break;
                 }
@@ -432,6 +423,23 @@ export async function getStaticProps({ params: { slug }, preview }) {
       } catch (_) {
         console.log(`Failed to get tweet embed for ${src}`);
       }
+    }
+    if (type == "image"){
+      console.log("V: ",value)
+      const {format = {}, id=""} = value
+      const {display_source = ""} = format
+      try{
+        const res = await fetch(`${process.env.SITE_URL}/api/asset?assetUrl=${encodeURIComponent(display_source as any)}&blockId=${id}`)
+        const json = await res.json();
+        const imgUrl = json.body
+        const s =  imgUrl?.split("?")[0].split("/")
+        const imgCaption = s[s.length-1].split(".")[0].replace("-", " ").trim()
+        properties.imgUrl = imgUrl
+        properties.imgCaption = imgCaption
+      }catch(_){
+        console.warn(`Failed to get images source for ${id}`)
+      }
+      console.log("NEW: ", value)
     }
   }
 

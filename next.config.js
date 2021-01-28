@@ -43,7 +43,9 @@ if (!BLOG_INDEX_ID) {
 
 module.exports = {
   target: 'experimental-serverless-trace',
-
+  images: {
+    domains: ["s3.us-west-2.amazonaws.com"],
+  },
   webpack(cfg, { dev, isServer }) {
     // only compile build-rss in production server build
     if (dev || !isServer) return cfg;

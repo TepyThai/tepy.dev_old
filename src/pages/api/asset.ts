@@ -30,9 +30,8 @@ export default async function notionApi(
           message: 'Failed to get asset URL',
         });
       }
-
-      res.status(307);
-      res.setHeader('Location', signedUrls.pop());
+      res.status(200);
+      res.json({body: signedUrls.pop()});
       res.end();
     }
   } catch (error) {

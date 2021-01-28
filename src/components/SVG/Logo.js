@@ -14,7 +14,7 @@ const icon = {
   },
 };
 
-function Logo({ loadingType, ...rest }) {
+const Logo = React.forwardRef(({ loadingType, ...rest }, ref) => {
   return (
     <AnimatePresence initial="hidden">
       <motion.svg
@@ -41,6 +41,6 @@ function Logo({ loadingType, ...rest }) {
       </motion.svg>
     </AnimatePresence>
   );
-}
+})
 
 export default Logo;
