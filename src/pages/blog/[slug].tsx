@@ -1,3 +1,5 @@
+import * as React from 'react';
+import { CSSProperties, useEffect, useState } from "react"
 import Link from 'next/link';
 import Image from "next/image"
 import fetch from 'node-fetch';
@@ -8,7 +10,6 @@ import ReactJSXParser from '@zeit/react-jsx-parser';
 // import blogStyles from '../../styles/blog.module.css';
 import { textBlock } from '../../lib/notion/renderers';
 import getPageData from '../../lib/notion/getPageData';
-import React, { CSSProperties, useEffect, useState } from 'react';
 import getBlogIndex from '../../lib/notion/getBlogIndex';
 import getNotionUsers from '../../lib/notion/getNotionUsers';
 import { getBlogLink, getDateStr } from '../../lib/blog-helpers';
@@ -19,9 +20,6 @@ import '../../components/markdown.module.css';
 const listTypes = new Set(['bulleted_list', 'numbered_list']);
 
 const RenderPost = ({ post, redirect, preview }) => {
-  const [imgUrlMap, setImgUrlMap] = useState([])
-  const [srcId, setSrcId] = useState([])
-  const [imgs, setImgs] = useState({})
   const router = useRouter();
 
   let listTagName: string | null = null;
@@ -126,7 +124,7 @@ const RenderPost = ({ post, redirect, preview }) => {
 
               if (isList) {
                 listTagName =
-                  components[type === 'bulleted_list' ? 'ul' : 'ol'];
+                  components[type === 'bulleted_list' ? 'ul' : 'ol'] as any;
                 listLastId = `list${id}`;
 
                 listMap[id] = {
@@ -152,17 +150,20 @@ const RenderPost = ({ post, redirect, preview }) => {
                       const createEl = (item) =>
                         React.createElement(
                           components.li || 'ul',
-                          { key: item.key },
+                          { key: item.key, children: [
                           item.children,
                           item.nested.length > 0
                             ? React.createElement(
                                 components.ul || 'ul',
-                                { key: item + 'sub-list' },
-                                item.nested.map((nestedId) =>
-                                  createEl(listMap[nestedId])
-                                )
+                                { key: item + 'sub-list', children: 
+                                  item.nested.map((nestedId) =>
+                                    createEl(listMap[nestedId])
+                                  )
+                                },
                               )
                             : null
+                            
+                          ] },
                         );
                       return createEl(listMap[itemId]);
                     })

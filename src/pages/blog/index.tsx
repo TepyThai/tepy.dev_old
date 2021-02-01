@@ -1,14 +1,10 @@
 import Link from 'next/link';
 
 import {
-  getBlogLink,
-  getDateStr,
   postIsPublished,
 } from '../../lib/blog-helpers';
-import { textBlock } from '../../lib/notion/renderers';
 import getNotionUsers from '../../lib/notion/getNotionUsers';
 import getBlogIndex from '../../lib/notion/getBlogIndex';
-import Header from '../../components/Header';
 import Layout from '../../components/Layout';
 import BlogPost from '../../components/blog-post';
 
@@ -46,7 +42,7 @@ export async function getStaticProps({ preview }) {
   };
 }
 
-export default ({ posts = [], preview }) => {
+export default function Blog({ posts = [], preview }){
   return (
     <Layout>
       {preview && (
