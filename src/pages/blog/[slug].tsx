@@ -324,8 +324,7 @@ const RenderPost = ({ post, redirect, preview }) => {
                     toRender.push(
                       React.createElement(
                         components.blockquote,
-                        { key: id },
-                        properties.title
+                        { key: id, children: properties.title },
                       )
                     );
                   }
