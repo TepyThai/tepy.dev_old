@@ -259,7 +259,7 @@ const RenderPost = ({ post, redirect, preview }) => {
                         />
                         <figcaption>{properties.imgCaption}</figcaption>
                       </div>
-                    ): <div>NO IMAGE</div> : 
+                    ): <div>Image failed to load!</div> : 
                       <video
                         key={!useWrapper ? id : undefined}
                         src={`/api/asset?assetUrl=${encodeURIComponent(
@@ -274,12 +274,7 @@ const RenderPost = ({ post, redirect, preview }) => {
                     ;
                   }
 
-                  toRender.push(
-                      <div
-                      >
-                        {child}
-                      </div>
-                  );
+                  toRender.push(child)
                   break;
                 }
                 case 'header':
@@ -346,10 +341,13 @@ const RenderPost = ({ post, redirect, preview }) => {
                 case 'tweet': {
                   if (properties.html) {
                     toRender.push(
-                      <div
-                        dangerouslySetInnerHTML={{ __html: properties.html }}
-                        key={id}
-                      />
+                      <div className="flex w-full items-center justify-center">
+                        <div
+                          dangerouslySetInnerHTML={{ __html: properties.html }}
+                          key={id}
+                          className="max-w-sm "
+                        />
+                      </div>
                     );
                   }
                   break;
