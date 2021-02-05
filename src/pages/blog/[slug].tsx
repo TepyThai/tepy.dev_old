@@ -15,7 +15,6 @@ import getNotionUsers from '../../lib/notion/getNotionUsers';
 import { getBlogLink, getDateStr } from '../../lib/blog-helpers';
 import Layout from '../../components/Layout';
 import SocialMeta from '../../components/meta';
-import '../../components/markdown.module.css';
 
 const listTypes = new Set(['bulleted_list', 'numbered_list']);
 

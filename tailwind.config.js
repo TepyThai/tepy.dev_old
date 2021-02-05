@@ -1,5 +1,8 @@
+const colors = require("tailwindcss/colors")
+
 module.exports = {
-  purge: ['./src/**/*.html', './src/**/*.js'],
+  purge: ['./src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: false,
   theme: {
     extend: {
       fontFamily: {
@@ -28,6 +31,7 @@ module.exports = {
         twitter: '#30A1F2',
         github: '#24292E',
         dev: '#e2e2e2',
+        teal: colors.teal
       },
     },
   },

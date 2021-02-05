@@ -10,7 +10,7 @@
 }
 
 .markdown blockquote {
-  @apply border-l-4 .border-teal-600 px-3 opacity-75 .italic .rounded-sm;
+  @apply border-l-4 border-teal-600 px-3 opacity-75 italic rounded-sm;
 }
 
 .markdown strong {
@@ -34,7 +34,7 @@
 }
 
 .markdown a {
-  @apply border-b-2 border-pink-400 .text-pink-400 px-1 .transition .duration-200 .ease-in-out;
+  @apply border-b-2 border-pink-400 text-pink-400 px-1 transition duration-200 .ease-in-out;
 }
 
 .markdown a:hover {
@@ -42,13 +42,13 @@
 }
 
 .markdown code {
-  @apply bg-gray-300 px-1 .rounded;
+  @apply bg-gray-300 px-1 rounded;
 }
 
 .markdown pre {
-  @apply .rounded-md p-4 .overflow-auto;
+  @apply rounded-md p-4 overflow-auto;
 }
 
 .markdown pre>code {
-  @apply .bg-transparent;
+  @apply bg-transparent;
 }
