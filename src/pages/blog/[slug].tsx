@@ -289,7 +289,6 @@ const RenderPost = ({ post, redirect, preview }) => {
                   if (properties.title) {
                     const content = properties.title[0][0];
                     const language = properties.language[0][0];
-                    console.log('prop: ', properties);
                     if (language === 'LiveScript') {
                       // this requires the DOM for now
                       toRender.push(
@@ -389,7 +388,9 @@ export async function getStaticProps({ params: { slug }, preview }) {
   // if we can't find the post or if it is unpublished and
   // viewed without preview mode then we just redirect to /blog
   if (!post || (post.Published !== 'Yes' && !preview)) {
-    console.log(`Failed to find post for slug: ${slug}`);
+    if(process.env.NODE_ENV !== "production"){
+      console.log(`Failed to find post for slug: ${slug}`);
+    }
     return {
       props: {
         redirect: '/blog',
@@ -418,11 +419,12 @@ export async function getStaticProps({ params: { slug }, preview }) {
         properties.html = json.html.split('<script')[0];
         post.hasTweet = true;
       } catch (_) {
-        console.log(`Failed to get tweet embed for ${src}`);
+        if(process.env.NODE_ENV !== "production"){
+          console.log(`Failed to get tweet embed for ${src}`);
+        }
       }
     }
     if (type == "image"){
-      console.log("V: ",value)
       const {format = {}, id=""} = value
       const {display_source = ""} = format
       try{
@@ -436,7 +438,6 @@ export async function getStaticProps({ params: { slug }, preview }) {
       }catch(_){
         console.warn(`Failed to get images source for ${id}`)
       }
-      console.log("NEW: ", value)
     }
   }
 

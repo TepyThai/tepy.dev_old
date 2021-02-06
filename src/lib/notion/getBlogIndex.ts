@@ -81,7 +81,6 @@ export default async function getBlogIndex(previews = true) {
       writeFile(cacheFile, JSON.stringify(postsTable), 'utf8').catch(() => {});
     }
   }
-  // console.log('post table: ', postsTable);
 
   return postsTable;
 }
