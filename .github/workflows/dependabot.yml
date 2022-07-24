@@ -1,22 +1,25 @@
 name: Auto Fix Dependabot Dependency Alert
-on: pull_request
+on: pull_request_target
 permissions:
   pull-requests: write
-  issues: write
-  repository-projects: write
+  contents: write
 
 jobs:
-  build:
+  dependabot:
     runs-on: ubuntu-latest
+    if: ${{github.event.pull_request.user.login == 'dependabot[bot]'}}
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
+      - name: Dependabot Metadata
+        id: dependabot-metadata
+        uses: dependabot/fetch-metadata@v1.3.3
 
-      - name: Login to private container registry for dependencies
-        uses: docker/login-action@v1
-        with:
-          registry: https://1234567890.dkr.ecr.us-east-1.amazonaws.com
-          username: ${{secrets.READONLY_AWS_ACCESS_KEY_ID}}
-          password: ${{secrets.READONLY_AWS_ACCESS_KEY}}
-      - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      - name: Enable auto merge for Dependabot PR
+        run: cat ${{steps.dependabot-metadata.outputs}}
+
+      #   uses: docker/login-action@v1
+      #   with:
+      #     registry: https://1234567890.dkr.ecr.us-east-1.amazonaws.com
+      #     username: ${{secrets.READONLY_AWS_ACCESS_KEY_ID}}
+      #     password: ${{secrets.READONLY_AWS_ACCESS_KEY}}
+      # - name: Build the Docker image
+      #   run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
