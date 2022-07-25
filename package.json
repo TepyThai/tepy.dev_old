@@ -30,8 +30,5 @@
     "tailwindcss": "^1.4.6",
     "to-vfile": "^6.1.0",
     "unified": "^9.0.0"
-  },
-  "engines": {
-    "node": "18.6.0"
   }
 }
